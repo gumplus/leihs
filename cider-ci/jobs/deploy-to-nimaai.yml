@@ -1,0 +1,16 @@
+jobs:
+  deploy-to-nimaai:
+    include: cider-ci/task-components/deploy-defaults.yml
+    name: Deploy to nimaai.ruby.zhdk.ch
+
+    context:
+
+      task_defaults:
+        exclusive_global_resources:
+          "nimaai.ruby.zhdk.ch": true
+        environment_variables:
+          DEPLOY_TARGET_INVENTORY: nimaai-hosts
+
+      tasks:
+        deploy:
+          include: cider-ci/task-components/nimaai-deploy.yml
