@@ -7,14 +7,8 @@ traits:
 
 scripts:
 
-  include:
-    - cider-ci/script-components/fetch-dump.yml
-    - cider-ci/script-components/restore-dump.yml
-
   deploy:
     timeout: 6 Hour
-    start_when:
-      data from prod was synced: {script_key: restore-dump, states: [passed]}
     body: |
       set -eux
       cd deploy
