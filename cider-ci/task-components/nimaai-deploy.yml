@@ -8,7 +8,7 @@ traits:
 scripts:
 
   deploy:
-    timeout: 1 Hour
+    timeout: 6 Hour
     body: |
       set -eux
       cd deploy
