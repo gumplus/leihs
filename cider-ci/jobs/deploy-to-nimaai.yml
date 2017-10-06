@@ -13,4 +13,5 @@ jobs:
 
       tasks:
         deploy:
+          max_trials: 1
           include: cider-ci/task-components/nimaai-deploy.yml
