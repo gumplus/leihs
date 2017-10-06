@@ -3,6 +3,12 @@ jobs:
     include: cider-ci/task-components/deploy-defaults.yml
     name: Deploy to nimaai.ruby.zhdk.ch
 
+    run_when:
+      'on nimaai branch':
+        type: branch
+        include_match: ^.*nimaai.*$
+        exclude_match: '^.*no-ci.*$'
+
     context:
 
       task_defaults:
